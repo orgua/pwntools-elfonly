@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 dynamic = ["version", "scripts"]
 
-name = "pwntools"
+name = "pwntools-elf-only"
 description = "Pwntools CTF framework and exploit development library."
 license = {text = "Mostly MIT, some GPL/BSD, see LICENSE-pwntools.txt"}
 readme = "README.md"
@@ -32,7 +32,7 @@ classifiers = [
 ]
 keywords = ["pwntools", "exploit", "ctf", "capture", "the", "flag", "binary", "wargame", "overflow", "stack", "heap", "defcon"]
 
-requires-python = ">=2.7"
+requires-python = ">=3.7"
 dependencies = [
     "mako>=1.0.0",
     "pyelftools>=0.2.4",
@@ -49,8 +49,7 @@ dependencies = [
     "six>=1.12.0",
     "rpyc",
     "colored_traceback",
-    "pathlib2; python_version < '3.4'",
-    "unix-ar; python_version >= '3'",
+    "unix-ar",
     "zstandard",
 ]
 
