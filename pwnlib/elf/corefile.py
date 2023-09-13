@@ -76,7 +76,6 @@ import tempfile
 from io import BytesIO, StringIO
 
 import elftools
-from elftools.common.py3compat import bytes2str
 from elftools.common.utils import roundup
 from elftools.common.utils import struct_parse
 from elftools.construct import CString
@@ -134,11 +133,11 @@ def iter_notes(self):
         self.stream.seek(offset)
         # n_namesz is 4-byte aligned.
         disk_namesz = roundup(note['n_namesz'], 2)
-        note['n_name'] = bytes2str(
-            CString('').parse(self.stream.read(disk_namesz)))
+        note['n_name'] =
+            CString('').parse(self.stream.read(disk_namesz)).decode('latin-1')
         offset += disk_namesz
 
-        desc_data = bytes2str(self.stream.read(note['n_descsz']))
+        desc_data = self.stream.read(note['n_descsz']).decode('latin-1')
         note['n_desc'] = desc_data
         offset += roundup(note['n_descsz'], 2)
         note['n_size'] = offset - note['n_offset']
