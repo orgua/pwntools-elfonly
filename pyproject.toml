@@ -19,7 +19,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: POSIX :: Linux",
-    "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 3",
     "Topic :: Security",
     "Topic :: Software Development :: Assemblers",
@@ -49,8 +48,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://pwntools.com"
-download = "https://github.com/Gallopsled/pwntools/releases"
+homepage = "https://github.com/orgua/pwntools-elfonly"
 
 [tool.distutils.bdist_wheel]
 universal = 1
