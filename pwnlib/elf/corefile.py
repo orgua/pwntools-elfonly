@@ -133,8 +133,7 @@ def iter_notes(self):
         self.stream.seek(offset)
         # n_namesz is 4-byte aligned.
         disk_namesz = roundup(note['n_namesz'], 2)
-        note['n_name'] =
-            CString('').parse(self.stream.read(disk_namesz)).decode('latin-1')
+        note['n_name'] = CString('').parse(self.stream.read(disk_namesz)).decode('latin-1')
         offset += disk_namesz
 
         desc_data = self.stream.read(note['n_descsz']).decode('latin-1')
